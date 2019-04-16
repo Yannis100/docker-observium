@@ -27,7 +27,7 @@
 #                                 socket instead of using TCP.
 #
 #
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.22
 MAINTAINER Codey Oxley <codey@yelp.com>
 EXPOSE 8000/tcp
 VOLUME ["/config", \
@@ -60,17 +60,8 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
 # Install locales
-RUN locale-gen cs_CZ.UTF-8
-RUN locale-gen de_DE.UTF-8
 RUN locale-gen en_US.UTF-8
-RUN locale-gen es_ES.UTF-8
 RUN locale-gen fr_FR.UTF-8
-RUN locale-gen it_IT.UTF-8
-RUN locale-gen pl_PL.UTF-8
-RUN locale-gen pt_BR.UTF-8
-RUN locale-gen ru_RU.UTF-8
-RUN locale-gen sl_SI.UTF-8
-RUN locale-gen uk_UA.UTF-8
 
 # Install Observium prereqs
 RUN apt-get update -q && \
@@ -82,18 +73,18 @@ RUN apt-get update -q && \
       graphviz \
       imagemagick \
       ipmitool \
-      libapache2-mod-php5 \
+      libapache2-mod-php \
       libvirt-bin \
       mariadb-client \
       mtr-tiny \
       nmap \
-      php5-cli \
-      php5-gd \
-      php5-json \
-      php5-ldap \
-      php5-mcrypt \
-      php5-mysql \
-      php5-snmp \
+      php-cli \
+      php-gd \
+      php-json \
+      php-ldap \
+      php-mcrypt \
+      php-mysql \
+      php-snmp \
       php-pear \
       pwgen \
       python-mysqldb \
